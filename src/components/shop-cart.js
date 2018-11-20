@@ -9,38 +9,28 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 */
 
 import { LitElement, html } from '@polymer/lit-element';
-import { connect } from 'pwa-helpers/connect-mixin.js';
-
-// This element is connected to the Redux store.
-import { store } from '../store.js';
 
 // These are the elements needed by this element.
 import { removeFromCartIcon } from './my-icons.js';
 import './shop-item.js';
 
-// These are the actions needed by this element.
-import { removeFromCart } from '../actions/shop.js';
-
-// These are the reducers needed by this element.
-import { cartItemsSelector, cartTotalSelector } from '../reducers/shop.js';
-
 // These are the shared styles needed by this element.
 import { ButtonSharedStyles } from './button-shared-styles.js';
 
-class ShopCart extends connect(store)(LitElement) {
+class ShopCart extends LitElement {
   render() {
     return html`
       ${ButtonSharedStyles}
       <style>
         :host { display: block; }
       </style>
-      <p ?hidden="${this._items.length !== 0}">Please add some products to cart.</p>
-      ${this._items.map((item) =>
+      <p ?hidden="${this.cart.addedIds.length !== 0}">Please add some products to cart.</p>
+      ${this._displayCart(this.cart).map((item) =>
         html`
           <div>
             <shop-item .name="${item.title}" .amount="${item.amount}" .price="${item.price}"></shop-item>
             <button
-                @click="${this._removeButtonClicked}"
+                @click="${this._removeFromCart}"
                 data-index="${item.id}"
                 title="Remove from cart">
               ${removeFromCartIcon}
@@ -48,23 +38,35 @@ class ShopCart extends connect(store)(LitElement) {
           </div>
         `
       )}
-      <p ?hidden="${!this._items.length}"><b>Total:</b> ${this._total}</p>
     `;
   }
 
   static get properties() { return {
-    _items: { type: Array },
-    _total: { type: Number }
+    cart: { type: Object },
+    products: { type: Object }
   }}
 
-  _removeButtonClicked(e) {
-    store.dispatch(removeFromCart(e.currentTarget.dataset['index']));
+  _displayCart(cart) {
+    const items = [];
+    for (let id of cart.addedIds) {
+      const item = this.products[id];
+      items.push({id: item.id, title: item.title, amount: cart.quantityById[id], price: item.price});
+    }
+    return items;
   }
 
-  // This is called every time something is updated in the store.
-  stateChanged(state) {
-    this._items = cartItemsSelector(state);
-    this._total = cartTotalSelector(state);
+  _calculateTotal(cart) {
+    let total = 0;
+    for (let id of cart.addedIds) {
+      const item = this.products[id];
+      total += item.price * cart.quantityById[id];
+    }
+    return parseFloat(Math.round(total * 100) / 100).toFixed(2);
+  }
+
+  _removeFromCart(event) {
+    this.dispatchEvent(new CustomEvent('removeFromCart',
+        {bubbles: true, composed: true, detail:{item:event.currentTarget.dataset['index']}}));
   }
 }
 
