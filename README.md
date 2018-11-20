@@ -26,3 +26,13 @@ This template has the same UI elements as the `master` one (`app-layout` element
 - [x] Setup Safari testing on Travis.
 - [x] Deploy all templates as demos.
 - [ ] Update to latest [Material Web Components](https://github.com/material-components/material-components-web-components).
+
+
+
+
+
+
+
+###################     ADDED
+let's get started :
+https://pwa-starter-kit.polymer-project.org/setup
