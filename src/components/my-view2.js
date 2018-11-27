@@ -38,6 +38,11 @@ class MyView2 extends PageViewElement {
           </counter-element>
         </p>
       </section>
+      <section>
+        <center>
+          <paper-loginscreen title="Login to" subtitle="webcomponents.org"></paper-loginscreen>
+        </center>
+      </section>
     `;
   }
 
