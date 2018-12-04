@@ -180,6 +180,7 @@ class MyApp extends LitElement {
         <a ?selected="${this._page === 'view1'}" href="/view1">View One</a>
         <a ?selected="${this._page === 'view2'}" href="/view2">View Two</a>
         <a ?selected="${this._page === 'view3'}" href="/view3">View Three</a>
+        <a ?selected="${this._page === 'players'}" href="/players">Players</a>
       </nav>
     </app-header>
 
@@ -190,6 +191,7 @@ class MyApp extends LitElement {
         <a ?selected="${this._page === 'view1'}" href="/view1">View One</a>
         <a ?selected="${this._page === 'view2'}" href="/view2">View Two</a>
         <a ?selected="${this._page === 'view3'}" href="/view3">View Three</a>
+        <a ?selected="${this._page === 'players'}" href="/players">Players</a>
       </nav>
     </app-drawer>
 
@@ -199,6 +201,7 @@ class MyApp extends LitElement {
       <my-view2 class="page" ?active="${this._page === 'view2'}"></my-view2>
       <my-view3 class="page" ?active="${this._page === 'view3'}"></my-view3>
       <my-view404 class="page" ?active="${this._page === 'view404'}"></my-view404>
+      <players-view class="page" ?active="${this._page === 'players'}"></players-view>
     </main>
 
     <footer>
@@ -297,7 +300,8 @@ class MyApp extends LitElement {
         import('../components/my-view3.js');
         break;
       case 'players':
-        import('../components/my-view1.js')
+        import('../components/players-view.js');
+        break;
       default:
         page = 'view404';
         import('../components/my-view404.js');

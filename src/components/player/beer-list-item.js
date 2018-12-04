@@ -4,7 +4,7 @@ import {PolymerElement, html} from '@polymer/polymer/polymer-element.js';
 import '@granite-elements/granite-bootstrap/granite-bootstrap.js';
 
 // Define the element's class element
-export class PlayerListItem extends PolymerElement {
+export class BeerListItem extends PolymerElement {
 
   static get template() {
     return html`
@@ -20,14 +20,15 @@ export class PlayerListItem extends PolymerElement {
         .el-img {
           max-height: 100px;
         }
-        .el-ratio {
+        .el-alcohol {
           clear:both;
         }
       </style>
-      <div id="[[id]]" class="player clearfix">
-        <a href="#/player/[[id]]"><h2 class="el-name">[[name]]</h2></a>
+      <div id="[[id]]" class="beer clearfix">
+        <img class="float-right el-img" src="/data/beers/[[img]]">
+        <a href="#/beer/[[id]]"><h2 class="el-name">[[name]]</h2></a>
         <p class="el-description">[[description]]</p>
-        <p class="float-right el-ratio">Win ratio: [[ratio]]%</p>
+        <p class="float-right el-alcohol">Alcohol content: [[alcohol]]%</p>
       </div>
     `;
   }
@@ -54,4 +55,4 @@ export class PlayerListItem extends PolymerElement {
 }
 
 // Associate the new class with an element name
-customElements.define('player-list-item', PlayerListItem);
+customElements.define('beer-list-item', BeerListItem);

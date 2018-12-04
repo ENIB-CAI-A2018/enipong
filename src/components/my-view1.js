@@ -48,14 +48,6 @@ class MyView1 extends PolymerElement {
       },
     };
   }
-
-  connectedCallback() {
-    super.connectedCallback();
-
-    if (!this.route.path) {
-      this.route = { ... this.route, path: '/players' }
-    }
-  }
 }
 
 
