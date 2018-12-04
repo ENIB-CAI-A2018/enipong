@@ -1,4 +1,4 @@
-import {PolymerElement, html} from '@polymer/polymer-element.js';
+import {PolymerElement, html} from '@polymer/polymer/polymer-element.js';
 
 export class PlayerNotFound extends PolymerElement {
 

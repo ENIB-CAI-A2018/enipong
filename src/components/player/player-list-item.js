@@ -1,7 +1,7 @@
-import {PolymerElement, html} from '@polymer/polymer-element.js';
+import {PolymerElement, html} from '@polymer/polymer/polymer-element.js';
 
 // Import template repeater
-import '@polymer/lib/elements/dom-repeat.js';
+import '@polymer/polymer/lib/elements/dom-repeat.js';
 
 import '@granite-elements/granite-bootstrap/granite-bootstrap';
 
@@ -15,42 +15,42 @@ export class PlayerList extends PolymerElement {
       <div class="players container">
         <div class="row">
           <div class="col-md-3">
-            <!--Sidebar content--> 
+            <!--Sidebar content-->
             <div class="form-group">
               <label for="search">Search</label>
-              <input 
-                  type="text" 
-                  class="form-control" 
-                  id="search"  
+              <input
+                  type="text"
+                  class="form-control"
+                  id="search"
                   placeholder="Enter search"
                   on-input="_inputChange">
               <label for="sort" class="mt-3">Sort by</label>
-              <select 
-                  id="sort" 
+              <select
+                  id="sort"
                   class="form-control"
                   on-change='_sortingChanged'>
                 <template is="dom-repeat" items="[[criteria]]">
-                  <option 
+                  <option
                       value="[[item.name]]">
                     [[item.label]]
                   </option>
                 </template>
               </select>
               <label for="descending" class="mt-3">Descending sort</label>
-              <input 
-                  id="descending" 
-                  type="checkbox" 
+              <input
+                  id="descending"
+                  type="checkbox"
                   on-change="_descendingChange">
             </div>
           </div>
           <div class="col-md-9">
             <div class="players">
-              <template 
-                  id="playerList" is="dom-repeat" 
+              <template
+                  id="playerList" is="dom-repeat"
                   items="[[players]]" filter="_playerFilter" sort="_playerSorter">
-                <player-list-item 
+                <player-list-item
                     id="[[item.id]]"
-                    name="[[item.name]]" 
+                    name="[[item.name]]"
                     description="[[item.description]]"
                     img="[[item.img]]"
                     alcohol="[[item.alcohol]]">
@@ -58,7 +58,7 @@ export class PlayerList extends PolymerElement {
               </template>
             </div>
             <div>Number of players in list: [[currentplayers]]</div>
-          </div>          
+          </div>
         </div>
       </div>
     `;
@@ -109,7 +109,7 @@ export class PlayerList extends PolymerElement {
     if (this.descendingSort) invert = -1;
     if ( a[this.criterium] === b[this.criterium] ) return 0;
     if ( a[this.criterium] < b[this.criterium] ) return -1*invert;
-    if ( a[this.criterium] > b[this.criterium] ) return 1*invert;         
+    if ( a[this.criterium] > b[this.criterium] ) return 1*invert;
   }
 
   _getCurrentPlayers() {

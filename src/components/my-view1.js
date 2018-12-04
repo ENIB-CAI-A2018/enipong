@@ -8,10 +8,8 @@ Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
 */
 
-import {PolymerElement, html} from '@polymer/polymer-element.js';
-import '@polymer/lib/elements/dom-if.js';
-import '@app-route/app-route';
-import '@app-route/app-location';
+import { html } from '@polymer/lit-element';
+import '@polymer/polymer/lib/elements/dom-if.js';
 
 import '@granite-elements/granite-bootstrap/granite-bootstrap.js';
 
@@ -20,16 +18,10 @@ import './player/player-details.js';
 
 // These are the shared styles needed by this element.
 
-class MyView1 extends PolymerElement {
+class MyView1 extends PageViewElement {
   static get template() {
     return html`
     <style include="granite-bootstrap"></style>
-
-      <app-location route="{{route}}" use-hash-as-path></app-location>
-
-        <app-route route="[[route]]" pattern="/players" active="{{playerListActive}}"></app-route>
-      <app-route route="[[route]]" pattern="/player/:id" data="{{playerId}}" active="{{playerIdActive}}"></app-route>
-
 
       <template is="dom-if" if="{{playerListActive}}">
         <player-list></player-list>
@@ -57,13 +49,13 @@ class MyView1 extends PolymerElement {
     };
   }
 
-  connectedCallback() {
-    super.connectedCallback();
-
-    if (!this.route.path) {
-      this.route = { ... this.route, path: '/players' }
-    }
-  }
+  // connectedCallback() {
+  //   super.connectedCallback();
+  //
+  //   if (!this.route.path) {
+  //     this.route = { ... this.route, path: '/players' }
+  //   }
+  // }
 }
 
 

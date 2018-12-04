@@ -296,6 +296,8 @@ class MyApp extends LitElement {
       case 'view3':
         import('../components/my-view3.js');
         break;
+      case 'players':
+        import('../components/my-view1.js')
       default:
         page = 'view404';
         import('../components/my-view404.js');
