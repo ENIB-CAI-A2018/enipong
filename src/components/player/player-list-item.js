@@ -53,7 +53,7 @@ export class PlayerList extends PolymerElement {
                     name="[[item.name]]"
                     description="[[item.description]]"
                     img="[[item.img]]"
-                    alcohol="[[item.alcohol]]">
+                    ratio="[[item.ratio]]">
                 </player-list-item>
               </template>
             </div>
@@ -132,7 +132,7 @@ export class PlayerList extends PolymerElement {
 
     this.criteria = [
       { name: "name", label: "Alphabetical"},
-      { name: "alcohol", label: "Alcohol content" }
+      { name: "ratio", label: "Ratio" }
     ];
 
     this.criterium = this.criteria[0].name;
@@ -141,4 +141,4 @@ export class PlayerList extends PolymerElement {
   }
 }
 
-customElements.define('player-list', PlayerList);
+window.customElements.define('player-list', PlayerList);

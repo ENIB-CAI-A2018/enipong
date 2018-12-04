@@ -142,4 +142,4 @@ export class PlayerDetail extends PolymerElement {
 }
 
 
-customElements.define('player-detail',PlayerDetail);
+window.customElements.define('player-detail',PlayerDetail);
