@@ -10,6 +10,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 import {PolymerElement, html} from '@polymer/polymer/polymer-element.js';
 import '@polymer/polymer/lib/elements/dom-if.js';
+import '@polymer/app-route/app-route';
+import '@polymer/app-route/app-location';
 
 import '@granite-elements/granite-bootstrap/granite-bootstrap.js';
 
@@ -18,9 +20,10 @@ import './player/player-details.js';
 
 // These are the shared styles needed by this element.
 
-class MyView1 extends PolymerElement {
-  static get template() {
+class MyView1 extends PageViewElement {
+  render() {
     return html`
+    ${SharedStyles}
     <style include="granite-bootstrap"></style>
 
       <template is="dom-if" if="{{playerListActive}}">
@@ -51,4 +54,4 @@ class MyView1 extends PolymerElement {
 }
 
 
-PolymerElements.define('my-view1', MyView1);
+window.customElements.define('my-view1', MyView1);

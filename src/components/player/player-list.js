@@ -141,4 +141,4 @@ export class PlayerList extends PolymerElement {
   }
 }
 
-customElements.define('player-list', PlayerList);
+window.customElements.define('player-list',PlayerList);
