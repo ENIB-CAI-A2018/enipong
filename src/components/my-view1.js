@@ -8,7 +8,7 @@ Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
 */
 
-import { html } from '@polymer/lit-element';
+import {PolymerElement, html} from '@polymer/polymer/polymer-element.js';
 import '@polymer/polymer/lib/elements/dom-if.js';
 
 import '@granite-elements/granite-bootstrap/granite-bootstrap.js';
@@ -18,7 +18,7 @@ import './player/player-details.js';
 
 // These are the shared styles needed by this element.
 
-class MyView1 extends PageViewElement {
+class MyView1 extends PolymerElement {
   static get template() {
     return html`
     <style include="granite-bootstrap"></style>
@@ -49,13 +49,13 @@ class MyView1 extends PageViewElement {
     };
   }
 
-  // connectedCallback() {
-  //   super.connectedCallback();
-  //
-  //   if (!this.route.path) {
-  //     this.route = { ... this.route, path: '/players' }
-  //   }
-  // }
+  connectedCallback() {
+    super.connectedCallback();
+
+    if (!this.route.path) {
+      this.route = { ... this.route, path: '/players' }
+    }
+  }
 }
 
 
