@@ -15,18 +15,13 @@ import { SharedStyles } from './shared-styles.js';
 
 
 class PlayersView extends PageViewElement {
-  static get template() {
+  render() {
     return html`
       <player-list></player-list>
-      <player-detail id="[[playerId.id]]"></player-detail>
     `;
   }
   static get properties() {
-    return {
-      playerId: {
-        type: String,
-      },
-    };
+    return {};
   }
 }
 
