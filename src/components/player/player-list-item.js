@@ -10,7 +10,7 @@ export class PlayerListItem extends PolymerElement {
     return html`
       <style include="granite-bootstrap"></style>
       <style>
-        .beer {
+        .player {
           margin: 10px;
           padding: 10px;
           border: solid 1px black;
@@ -25,7 +25,8 @@ export class PlayerListItem extends PolymerElement {
         }
       </style>
       <div id="[[id]]" class="player clearfix">
-        <a href="#/player/[[id]]"><h2 class="el-name">[[name]]</h2></a>
+        <img class="float-right el-img" src="/data/players/[[img]]">
+        <a href="/player/[[id]]"><h2 class="el-name">[[name]]</h2></a>
         <p class="el-description">[[description]]</p>
         <p class="float-right el-ratio">Win ratio: [[ratio]]%</p>
       </div>
@@ -46,7 +47,7 @@ export class PlayerListItem extends PolymerElement {
       img: {
         type: String,
       },
-      alcohol: {
+      ratio: {
         type: String,
       },
     }

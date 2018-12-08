@@ -79,9 +79,9 @@ export class PlayerDetail extends PolymerElement {
       </style>
 
       <div id="[[player.id]]" class="player clearfix">
-        <a href="#/players"><img class="pull-right back" src="/img/back.png"></a>
+        <a href="/players"><img class="pull-right back" src="/img/back.png"></a>
         <h1 class="name">[[player.name]]</h1>
-        <img class="pull-right img" src="/data/[[player.img]]">
+        <img class="pull-right img" src="{{mainImg}}">
         <p class="description">[[player.description]]</p>
 
         <ul class="player-thumbs">
@@ -126,14 +126,24 @@ export class PlayerDetail extends PolymerElement {
       player: {
         type: Object,
       },
+      mainImg: {
+        type: String,
+        value: "",
+      },
     };
   }
 
+  setImage(e){
+    this.mainImg = e.path[0].src;
+  }
+
   async _onIdChange() {
+    console.log(this.id);
     const url = `/data/players/details/${this.id}.json`;
     try {
       const response = await fetch(url);
       this.player = await response.json();
+      this.mainImg = "/data/"+this.player.img;
     }
     catch (err) {
       console.log('fetch failed', err);

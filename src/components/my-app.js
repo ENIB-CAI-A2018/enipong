@@ -169,7 +169,7 @@ class MyApp extends LitElement {
     </style>
 
     <!-- Header -->
-    <app-header condenses reveals effects="waterfall">
+    <app-header>
       <app-toolbar class="toolbar-top">
         <button class="menu-btn" title="Menu" @click="${this._menuButtonClicked}">${menuIcon}</button>
         <div main-title>${this.appTitle}</div>
@@ -202,11 +202,12 @@ class MyApp extends LitElement {
       <my-view3 class="page" ?active="${this._page === 'view3'}"></my-view3>
       <my-view404 class="page" ?active="${this._page === 'view404'}"></my-view404>
       <players-view class="page" ?active="${this._page === 'players'}"></players-view>
+      <player-detail-view class="page" ?active="${this._page === 'player/'+this._playerId}"></player-detail-view>
     </main>
 
-    <footer>
+    <!--footer>
       <p>Made with &hearts; by the Polymer team.</p>
-    </footer>
+    </footer-->
 
     <snack-bar ?active="${this._snackbarOpened}">
         You are now ${this._offline ? 'offline' : 'online'}.</snack-bar>
@@ -219,7 +220,8 @@ class MyApp extends LitElement {
       _page: { type: String },
       _drawerOpened: { type: Boolean },
       _snackbarOpened: { type: Boolean },
-      _offline: { type: Boolean }
+      _offline: { type: Boolean },
+      _playerId : { type: String }
     }
   }
 
@@ -270,7 +272,16 @@ class MyApp extends LitElement {
 
   _locationChanged() {
     const path = window.decodeURIComponent(window.location.pathname);
-    const page = path === '/' ? 'view1' : path.slice(1);
+    const parts = path.slice(1).split('/');
+    // const page = path === '/' ? 'view1' : path.slice(1);
+    var page = {};
+    if (parts[0] == 'player'){
+      this._playerId = parts[1];
+      console.log(this._playerId);
+      page = parts[0] + '/' + parts[1];
+    } else {
+      page = parts[0] || 'view2';
+    }
     this._loadPage(page);
     // Any other info you might want to extract from the path (like page type),
     // you can do here.
@@ -288,10 +299,7 @@ class MyApp extends LitElement {
   _loadPage(page) {
     switch(page) {
       case 'view1':
-        import('../components/my-view1.js')/*.then((module) => {
-          // Put code in here that you want to run every time when
-          // navigating to view1 after my-view1.js is loaded.
-        })*/;
+        import('../components/my-view1.js');
         break;
       case 'view2':
         import('../components/my-view2.js');
@@ -302,11 +310,14 @@ class MyApp extends LitElement {
       case 'players':
         import('../components/players-view.js');
         break;
+      case 'player'+'/'+this._playerId:
+        console.log("case :",page);
+        import('../components/player-detail-view.js');
+        break;
       default:
         page = 'view404';
         import('../components/my-view404.js');
     }
-
     this._page = page;
   }
 

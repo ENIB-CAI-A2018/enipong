@@ -72,9 +72,9 @@ export class PlayerList extends PolymerElement {
       filterText: {
         type: String,
       },
-      currentplayers: {
+      currentPlayers: {
         type: String,
-        computed: '_getCurrentPlayers(players, filterText)',
+        computed: '_getCurrentPlayers(players,filterText)',
       },
       criterium: {
         type: String,
