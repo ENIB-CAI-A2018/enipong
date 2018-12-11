@@ -1,0 +1,12 @@
+{
+  "ratio": 70,
+  "team": "ORG",
+  "availability": "Dans l'attente d'un contrat",
+  "description": "The king of the abbey beers. It is amber-gold and pours with a deep head and original aroma, delivering a complex, full bodied flavour. Pure enjoyment! Secondary fermentation in the bottle.",
+  "id": "AffligemTripel",
+  "img": "players/img/AffligemTripel.jpg",
+  "label": "players/img/AffligemTripel-label.png",
+  "name": "Affligem Tripel",
+  "serving": "Serve in a Snifter",
+  "style": "Belgian-Style Tripel"
+}
