@@ -1,0 +1,12 @@
+{
+  "ratio": 70,
+  "team": "ORG",
+  "availability": "Dans l'attente d'un contrat",
+  "description": "This beer, with high fermentation, has a pale amber colour and a flowery, fruity taste with a harmonious balance between sweet and sour. This beer has a thick and vivid froth and strikes its balanced taste with a delicate bitterness.",
+  "id": "StBernardusTripel",
+  "img": "players/img/StBernardusTripel.jpg",
+  "label": "players/img/StBernardusTripel-label.png",
+  "name": "St Bernardus Tripel",
+  "serving": "Serve in a Snifter",
+  "style": "Belgian-Style Tripel"
+}

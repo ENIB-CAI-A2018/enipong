@@ -181,6 +181,7 @@ class MyApp extends LitElement {
         <a ?selected="${this._page === 'view2'}" href="/view2">View Two</a>
         <a ?selected="${this._page === 'view3'}" href="/view3">View Three</a>
         <a ?selected="${this._page === 'players'}" href="/players">Players</a>
+        <a ?selected="${this._page === 'teams'}" href="/teams">Teams</a>
       </nav>
     </app-header>
 
@@ -192,6 +193,7 @@ class MyApp extends LitElement {
         <a ?selected="${this._page === 'view2'}" href="/view2">View Two</a>
         <a ?selected="${this._page === 'view3'}" href="/view3">View Three</a>
         <a ?selected="${this._page === 'players'}" href="/players">Players</a>
+        <a ?selected="${this._page === 'teams'}" href="/teams">Teams</a>
       </nav>
     </app-drawer>
 
@@ -202,8 +204,17 @@ class MyApp extends LitElement {
       <my-view3 class="page" ?active="${this._page === 'view3'}"></my-view3>
       <my-view404 class="page" ?active="${this._page === 'view404'}"></my-view404>
       <players-view class="page" ?active="${this._page === 'players'}"></players-view>
+<<<<<<< HEAD
       <player-detail-view class="page" playerId=${this._playerId} ?active="${this._page === 'player/'+this._playerId}"></player-detail-view>
     </main>
+=======
+      <player-detail-view class="page" ?active="${this._page === 'player/'+this._playerId}"></player-detail-view>
+      <teams-view class="page" ?active="${this._page === 'teams'}"></teams-view>
+      <team-detail-view class="page" ?active="${this._page === 'team/'+this._teamId}"></team-detail-view>
+    
+      </main>
+      
+>>>>>>> 14e47296044a7978a407fb2ab654d4d974dd816a
 
     <!--footer>
       <p>Made with &hearts; by the Polymer team.</p>
@@ -221,7 +232,8 @@ class MyApp extends LitElement {
       _drawerOpened: { type: Boolean },
       _snackbarOpened: { type: Boolean },
       _offline: { type: Boolean },
-      _playerId : { type: String }
+      _playerId : { type: String },
+      _teamId : { type: String }
     }
   }
 
@@ -278,7 +290,15 @@ class MyApp extends LitElement {
     if (parts[0] == 'player'){
       this._playerId = parts[1];
       console.log(this._playerId);
+<<<<<<< HEAD
       page = 'player/' + parts[1];
+=======
+      page = parts[0] + '/' + parts[1];
+    } else if (parts[0] == 'team'){
+      this._teamId = parts[1];
+      console.log(this._teamId);
+      page = parts[0] + '/' + parts[1];
+>>>>>>> 14e47296044a7978a407fb2ab654d4d974dd816a
     } else {
       page = parts[0] || 'players';
     }
@@ -313,6 +333,13 @@ class MyApp extends LitElement {
       case 'player/'+this._playerId:
         console.log("case :",page);
         import('../components/player-detail-view.js');
+        break;
+        case 'teams':
+        import('../components/teams-view.js');
+        break;
+      case 'team'+'/'+this._teamId:
+        console.log("case :",page);
+        import('../components/team-detail-view.js');
         break;
       default:
         page = 'view404';
