@@ -182,6 +182,7 @@ class MyApp extends LitElement {
         <a ?selected="${this._page === 'view3'}" href="/view3">View Three</a>
         <a ?selected="${this._page === 'players'}" href="/players">Players</a>
         <a ?selected="${this._page === 'teams'}" href="/teams">Teams</a>
+        <a ?selected="${this._page === 'calendar'}" href="/calendar">Calendar</a>
       </nav>
     </app-header>
 
@@ -194,6 +195,7 @@ class MyApp extends LitElement {
         <a ?selected="${this._page === 'view3'}" href="/view3">View Three</a>
         <a ?selected="${this._page === 'players'}" href="/players">Players</a>
         <a ?selected="${this._page === 'teams'}" href="/teams">Teams</a>
+        <a ?selected="${this._page === 'calendar'}" href="/calendar">Calendar</a>
       </nav>
     </app-drawer>
 
@@ -207,6 +209,7 @@ class MyApp extends LitElement {
       <player-detail-view class="page" playerId=${this._playerId} ?active="${this._page === 'player/'+this._playerId}"></player-detail-view>
       <teams-view class="page" ?active="${this._page === 'teams'}"></teams-view>
       <team-detail-view class="page" teamId=${this._teamId} ?active="${this._page === 'team/'+this._teamId}"></team-detail-view>
+      <my-calendar class="page" ?active="${this._page === 'calendar'}"></my-calendar>
 
       </main>
 
@@ -331,6 +334,10 @@ class MyApp extends LitElement {
       case 'team/'+this._teamId:
         console.log("case :",page);
         import('../components/team-detail-view.js');
+        break;
+      case 'calendar':
+        console.log("case :",page);
+        import('../components/my-calendar.js');
         break;
       default:
         page = 'view404';
