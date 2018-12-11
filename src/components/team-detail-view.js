@@ -11,7 +11,7 @@ class TeamDetailView extends PageViewElement {
     return html`
     ${SharedStyles}
     <section>
-      <team-detail id="${this.teamId}"></team-detail>
+      ${this.active ? html `<team-detail id="${this.teamId}"></team-detail>` : ``}
     </section>
     `;
   }
@@ -21,19 +21,6 @@ class TeamDetailView extends PageViewElement {
         type : String,
       },
     };
-  }
-
-  connectedCallback() {
-    super.connectedCallback();
-    console.log("connectedCallback");
-
-    const path = window.decodeURIComponent(window.location.pathname);
-    const parts = path.slice(1).split('/');
-
-    if(parts[0] == 'team'){
-      console.log("inCondition");
-      this.teamId = parts[1];
-    }
   }
 }
 

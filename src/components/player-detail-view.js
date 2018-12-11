@@ -22,12 +22,6 @@ class PlayerDetailView extends PageViewElement {
       },
     };
   }
-
-  connectedCallback() {
-    super.connectedCallback();
-    console.log(this.playerId);
-    console.log(this.active);
-  }
 }
 
 customElements.define('player-detail-view', PlayerDetailView);

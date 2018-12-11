@@ -10,7 +10,7 @@ class TeamsView extends PageViewElement {
   render() {
     return html`
     ${SharedStyles}
-      <team-list></team-list>
+      ${this.active ? html `<team-list></team-list>` : ``}
     `;
   }
   static get properties() {
