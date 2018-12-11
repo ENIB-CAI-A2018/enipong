@@ -202,7 +202,7 @@ class MyApp extends LitElement {
       <my-view3 class="page" ?active="${this._page === 'view3'}"></my-view3>
       <my-view404 class="page" ?active="${this._page === 'view404'}"></my-view404>
       <players-view class="page" ?active="${this._page === 'players'}"></players-view>
-      <player-detail-view class="page" ?active="${this._page === 'player/'+this._playerId}"></player-detail-view>
+      <player-detail-view class="page" playerId=${this._playerId} ?active="${this._page === 'player/'+this._playerId}"></player-detail-view>
     </main>
 
     <!--footer>
@@ -278,9 +278,9 @@ class MyApp extends LitElement {
     if (parts[0] == 'player'){
       this._playerId = parts[1];
       console.log(this._playerId);
-      page = parts[0] + '/' + parts[1];
+      page = 'player/' + parts[1];
     } else {
-      page = parts[0] || 'view2';
+      page = parts[0] || 'players';
     }
     this._loadPage(page);
     // Any other info you might want to extract from the path (like page type),
@@ -310,7 +310,7 @@ class MyApp extends LitElement {
       case 'players':
         import('../components/players-view.js');
         break;
-      case 'player'+'/'+this._playerId:
+      case 'player/'+this._playerId:
         console.log("case :",page);
         import('../components/player-detail-view.js');
         break;

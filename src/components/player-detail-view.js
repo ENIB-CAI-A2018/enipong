@@ -11,7 +11,7 @@ class PlayerDetailView extends PageViewElement {
     return html`
     ${SharedStyles}
     <section>
-      <player-detail id="${this.playerId}"></player-detail>
+        ${this.active ? html`<player-detail id=${this.playerId} ></player-detail>` : ``}
     </section>
     `;
   }
@@ -25,15 +25,8 @@ class PlayerDetailView extends PageViewElement {
 
   connectedCallback() {
     super.connectedCallback();
-    console.log("connectedCallback");
-
-    const path = window.decodeURIComponent(window.location.pathname);
-    const parts = path.slice(1).split('/');
-
-    if(parts[0] == 'player'){
-      console.log("inCondition");
-      this.playerId = parts[1];
-    }
+    console.log(this.playerId);
+    console.log(this.active);
   }
 }
 

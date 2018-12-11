@@ -10,7 +10,7 @@ class PlayersView extends PageViewElement {
   render() {
     return html`
     ${SharedStyles}
-      <player-list></player-list>
+      ${this.active ? html `<player-list></player-list>` : ``}
     `;
   }
   static get properties() {
