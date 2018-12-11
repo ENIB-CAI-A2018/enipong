@@ -102,7 +102,7 @@ export class PlayerDetail extends PolymerElement {
           <li>
             <dl>
               <dt>Team</dt>
-              <dd>[[player.team]]</dd>
+              <a href=/team/[[player.id]]><dd>[[player.team]]</dd></a>
             </dl>
           </li>
           <li>
@@ -139,7 +139,8 @@ export class PlayerDetail extends PolymerElement {
 
   async _onIdChange() {
     console.log(this.id);
-    const url = `/data/players/details/${this.id}.json`;
+    // const url = `/data/players/details/${this.id}.json`;
+    const url = `http://localhost:3000/player/${this.id}`;
     try {
       const response = await fetch(url);
       this.player = await response.json();

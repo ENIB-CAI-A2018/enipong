@@ -139,7 +139,8 @@ export class TeamDetail extends PolymerElement {
 
   async _onIdChange() {
     console.log(this.id);
-    const url = `/data/teams/details/${this.id}.json`;
+    // const url = `/data/teams/details/${this.id}.json`;
+    const url = `http://localhost:3000/team/${this.id}`;
     try {
       const response = await fetch(url);
       this.team = await response.json();

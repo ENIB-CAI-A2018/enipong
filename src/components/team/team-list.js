@@ -118,7 +118,8 @@ export class TeamList extends PolymerElement {
 
   async _getData() {
     try {
-      const response = await fetch('/data/teams/teams.json');
+      const url = `http://localhost:3000/teams`;
+      const response = await fetch(url);
       this.teams = await response.json();
     }
     catch (err) {

@@ -177,9 +177,6 @@ class MyApp extends LitElement {
 
       <!-- This gets hidden on a small screen-->
       <nav class="toolbar-list">
-        <a ?selected="${this._page === 'view1'}" href="/view1">View One</a>
-        <a ?selected="${this._page === 'view2'}" href="/view2">View Two</a>
-        <a ?selected="${this._page === 'view3'}" href="/view3">View Three</a>
         <a ?selected="${this._page === 'players'}" href="/players">Players</a>
         <a ?selected="${this._page === 'teams'}" href="/teams">Teams</a>
         <a ?selected="${this._page === 'calendar'}" href="/calendar">Calendar</a>
@@ -190,9 +187,6 @@ class MyApp extends LitElement {
     <app-drawer .opened="${this._drawerOpened}"
         @opened-changed="${this._drawerOpenedChanged}">
       <nav class="drawer-list">
-        <a ?selected="${this._page === 'view1'}" href="/view1">View One</a>
-        <a ?selected="${this._page === 'view2'}" href="/view2">View Two</a>
-        <a ?selected="${this._page === 'view3'}" href="/view3">View Three</a>
         <a ?selected="${this._page === 'players'}" href="/players">Players</a>
         <a ?selected="${this._page === 'teams'}" href="/teams">Teams</a>
         <a ?selected="${this._page === 'calendar'}" href="/calendar">Calendar</a>
@@ -201,22 +195,19 @@ class MyApp extends LitElement {
 
     <!-- Main content -->
     <main role="main" class="main-content">
-      <my-view1 class="page" ?active="${this._page === 'view1'}"></my-view1>
-      <my-view2 class="page" ?active="${this._page === 'view2'}"></my-view2>
-      <my-view3 class="page" ?active="${this._page === 'view3'}"></my-view3>
       <my-view404 class="page" ?active="${this._page === 'view404'}"></my-view404>
       <players-view class="page" ?active="${this._page === 'players'}"></players-view>
       <player-detail-view class="page" playerId=${this._playerId} ?active="${this._page === 'player/'+this._playerId}"></player-detail-view>
       <teams-view class="page" ?active="${this._page === 'teams'}"></teams-view>
       <team-detail-view class="page" teamId=${this._teamId} ?active="${this._page === 'team/'+this._teamId}"></team-detail-view>
       <my-calendar class="page" ?active="${this._page === 'calendar'}"></my-calendar>
+    </main>
 
-      </main>
 
-
-    <!--footer>
-      <p>Made with &hearts; by the Polymer team.</p>
-    </footer-->
+    <footer>
+      <p>WIP</p>
+      <p>CAI ENIB 2018</p>
+    </footer>
 
     <snack-bar ?active="${this._snackbarOpened}">
         You are now ${this._offline ? 'offline' : 'online'}.</snack-bar>
@@ -312,15 +303,15 @@ class MyApp extends LitElement {
 
   _loadPage(page) {
     switch(page) {
-      case 'view1':
-        import('../components/my-view1.js');
-        break;
-      case 'view2':
-        import('../components/my-view2.js');
-        break;
-      case 'view3':
-        import('../components/my-view3.js');
-        break;
+      // case 'view1':
+      //   import('../components/my-view1.js');
+      //   break;
+      // case 'view2':
+      //   import('../components/my-view2.js');
+      //   break;
+      // case 'view3':
+      //   import('../components/my-view3.js');
+      //   break;
       case 'players':
         import('../components/players-view.js');
         break;

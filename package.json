@@ -20,17 +20,21 @@
     "test:regenerate_screenshots": "mocha test/integration/screenshots-baseline/regenerate.js --timeout=15000"
   },
   "dependencies": {
-    "@polymer/app-layout": "^3.0.0",
+    "@granite-elements/granite-bootstrap": "^4.1.1-1",
+    "@polymer/app-layout": "^3.0.2",
     "@polymer/app-route": "^3.0.2",
-    "@polymer/lit-element": "^0.6.2",
-    "@polymer/polymer": "^3.0.0",
-    "@webcomponents/webcomponentsjs": "^2.0.0",
+    "@polymer/lit-element": "^0.6.4",
+    "@polymer/polymer": "^3.1.0",
+    "@webcomponents/webcomponentsjs": "^2.2.1",
     "bulma": "^0.7.2",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "mongodb": "^3.1.10",
     "pwa-helpers": "^0.9.0"
   },
   "devDependencies": {
     "axe-core": "^3.0.0",
-    "chai": "^4.1.2",
+    "chai": "^4.2.0",
     "del": "^3.0.0",
     "gulp": "^4.0.0",
     "gulp-rename": "^1.3.0",
@@ -38,9 +42,9 @@
     "mocha": "^5.2.0",
     "pixelmatch": "^4.0.2",
     "polymer-cli": "^1.9.2",
-    "polyserve": "^0.27.0",
-    "prpl-server": "^1.2.0",
-    "puppeteer": "^1.5.0",
+    "polyserve": "^0.27.13",
+    "prpl-server": "^1.3.0",
+    "puppeteer": "^1.11.0",
     "wct-browser-legacy": "^1.0.2"
   }
 }

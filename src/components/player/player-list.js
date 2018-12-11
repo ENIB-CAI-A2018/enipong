@@ -118,7 +118,8 @@ export class PlayerList extends PolymerElement {
 
   async _getData() {
     try {
-      const response = await fetch('/data/players/players.json');
+      const url = `http://localhost:3000/players`;
+      const response = await fetch(url);
       this.players = await response.json();
     }
     catch (err) {

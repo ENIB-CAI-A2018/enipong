@@ -35,21 +35,21 @@ class MyCalendar extends PageViewElement {
                 <div class="box">
                   <p class="title"> {{items}} </p>
                 </div>
-              </div>   
+              </div>
             </template>
             </dom-repeat>
               <div class="column is-narrow">
                 <div class="add_evenement">
-                  <p onclick="appear()"><img src="images/plus.png" alt="Plus" title="Rajouter un évènement" height="50" width="50"/></p>
+                  <img onclick= "${this._appear()}" src="images/plus.png" alt="Plus" title="Rajouter un évènement" height="50" width="50"/>
                 </div>
-              </div>        
+              </div>
             </div>
           </div>
           </div>
         </div>
         <section>
         </section>
-        <template is="dom-if" if="{{showRegisterEvent}}">
+        <template is="dom-if" if="{{_showRegisterEvent}}">
         <section>
         <div class="field">
         <label class="label">Nom de l'événement</label>
@@ -57,7 +57,7 @@ class MyCalendar extends PageViewElement {
                 <input class="input" type="text" placeholder="Text input">
             </div>
         </div>
-      
+
         <div class="field">
             <label class="label">Lieu</label>
             <div class="control has-icons-left has-icons-right">
@@ -71,7 +71,7 @@ class MyCalendar extends PageViewElement {
             </div>
             <p class="help is-success">This username is available</p>
         </div>
-      
+
         <div class="field">
             <label class="label">Subject</label>
             <div class="control">
@@ -85,14 +85,14 @@ class MyCalendar extends PageViewElement {
                 </div>
             </div>
         </div>
-      
+
         <div class="field">
             <label class="label">Informations supplementaires</label>
             <div class="control">
                 <textarea class="textarea" placeholder="Textarea"></textarea>
             </div>
         </div>
-      
+
         <div class="field">
             <div class="control">
                 <label class="checkbox">
@@ -101,7 +101,7 @@ class MyCalendar extends PageViewElement {
             </label>
             </div>
         </div>
-      
+
         <div class="field is-grouped">
             <div class="control">
                 <button class="button is-link">Submit</button>
@@ -115,21 +115,23 @@ class MyCalendar extends PageViewElement {
         </body>
       </html>
 
-    `;  
-  } 
+    `;
+  }
   static get properties() { return {
     // This is the data from the store.
     _showRegisterEvent: {type: Boolean, value : false},
-    
+
   }}
 
   constructor() {
     super();
   }
-  appear(){
-    this._showRegisterEvent != this._showResgisterEvent;
-    return {_showRegisterEvent}
-}
+
+  _appear(){
+    this._showRegisterEvent = !this._showRegisterEvent;
+    console.log(this._showRegisterEvent);
+    return this._showRegisterEvent;
+  }
 
 }
 

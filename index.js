@@ -1,0 +1,123 @@
+var express = require('express');
+var cors = require('cors');
+var app = express();
+var assert = require('assert');
+var MongoClient = require('mongodb').MongoClient;
+
+app.use(cors());
+
+app.use('/data/players/img', express.static('img'));
+app.use(express.static('public'));
+
+var url = 'mongodb://localhost:27017/';
+
+
+var findPlayer = function(db, playerId, callback) {
+   var cursor = db.collection('playerDetails').find({id: playerId} );
+   var player;
+   cursor.each(function(err, doc) {
+      assert.equal(err, null);
+      if (doc != null) {
+        player = doc;
+      } else {
+         callback(player);
+      }
+   });
+};
+
+var findPlayers = function(db, playerList,  callback) {
+   var cursor =db.collection('players').find( );
+   cursor.each(function(err, doc) {
+      assert.equal(err, null);
+      if (doc != null) {
+         playerList.push(doc);
+      } else {
+         callback();
+      }
+   });
+};
+
+var findTeam = function(db, teamId, callback) {
+   var cursor = db.collection('teamDetails').find({id: teamId} );
+   var team;
+   cursor.each(function(err, doc) {
+      assert.equal(err, null);
+      if (doc != null) {
+        team = doc;
+      } else {
+         callback(team);
+      }
+   });
+};
+
+var findTeams = function(db, teamList,  callback) {
+   var cursor = db.collection('teams').find( );
+   cursor.each(function(err, doc) {
+      assert.equal(err, null);
+      if (doc != null) {
+         teamList.push(doc);
+      } else {
+         callback();
+      }
+   });
+};
+
+app.get('/players', function (req, res) {
+  console.log('Received request for players from', req.ip)
+
+  MongoClient.connect(url, function(err, client) {
+    var db = client.db('database');
+    assert.equal(null, err);
+    var playerList = [];
+    findPlayers(db, playerList, function() {
+      res.json(playerList);
+      client.close();
+    });
+  });
+});
+
+app.get('/player/:playerId', function (req, res) {
+  console.log('Received request for '+req.param('playerId')+' from', req.ip)
+  MongoClient.connect(url, function(err, client) {
+    var db = client.db('database');
+    assert.equal(null, err);
+    findPlayer(db, req.param('playerId'),  function(player) {
+      console.log(player)
+      res.json(player);
+      client.close();
+    });
+  });
+});
+
+app.get('/teams', function (req, res) {
+  console.log('Received request for teams from', req.ip)
+
+  MongoClient.connect(url, function(err, client) {
+    var db = client.db('database');
+    assert.equal(null, err);
+    var teamList = [];
+    findTeams(db, teamList, function() {
+      res.json(teamList);
+      client.close();
+    });
+  });
+});
+
+app.get('/team/:teamId', function (req, res) {
+  console.log('Received request for '+req.param('teamId')+' from', req.ip)
+  MongoClient.connect(url, function(err, client) {
+    var db = client.db('database');
+    assert.equal(null, err);
+    findTeam(db, req.param('teamId'),  function(team) {
+      console.log(team)
+      res.json(team);
+      client.close();
+    });
+  });
+});
+
+var server = app.listen(3000, function () {
+  var host = server.address().address;
+  var port = server.address().port;
+  console.log('Listening at http://%s:%s', host, port);
+});
