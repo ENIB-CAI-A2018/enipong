@@ -1,13 +1,13 @@
 [
   {
-    "ratio": 70,
+    "ratio": 80,
     "players": "RCA",
     "availability": "",
-    "description": "Affligem Blonde, the classic clear blonde abbey ale, with a gentle roundness and 6.8% alcohol. Low on bitterness, it is eminently drinkable.",
+    "description": "RCA>ORG",
     "id": "RCA",
     "img": "teams/img/RCA.jpg",
     "label": "teams/img/RCA-label.png",
-    "name": "RCA",
+    "name": "Racing Club d'Airball",
     "serving": "Serve in a Snifter",
     "style": "Belgian-Style Blonde Ale"
   }
