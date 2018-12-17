@@ -1,0 +1,14 @@
+[
+  {
+    "ratio": 70,
+    "team": "RCA",
+    "availability": "Trésorier",
+    "description": "Affligem Blonde, the classic clear blonde abbey ale, with a gentle roundness and 6.8% alcohol. Low on bitterness, it is eminently drinkable.",
+    "id": "Sizheure",
+    "img": "players/img/Sizheure.jpg",
+    "label": "players/img/AffligemBlond-label.png",
+    "name": "Sizheure",
+    "serving": "Serve in a Snifter",
+    "style": "Belgian-Style Blonde Ale"
+  }
+]
