@@ -102,7 +102,10 @@ export class TeamDetail extends PolymerElement {
           <li>
             <dl>
               <dt>Players</dt>
-              <dd>[[team.players]]</dd>
+              <a href=/player/[[team.players[0]]]><dd>[[team.players[0]]]</dd></a>
+              <a href=/player/[[team.players[1]]]><dd>[[team.players[1]]]</dd></a>
+              <a href=/player/[[team.players[2]]]><dd>[[team.players[2]]]</dd></a>
+              <a href=/player/[[team.players[3]]]><dd>[[team.players[3]]]</dd></a>
             </dl>
           </li>
           <li>
