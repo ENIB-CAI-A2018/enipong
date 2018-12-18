@@ -3,12 +3,9 @@
     "ratio": 70,
     "team": "ORG",
     "availability": "Membre",
-    "description": "Affligem Blonde, the classic clear blonde abbey ale, with a gentle roundness and 6.8% alcohol. Low on bitterness, it is eminently drinkable.",
+    "description": "Couscous",
     "id": "Kptain",
-    "img": "players/img/Kptain.jpg",
-    "label": "players/img/AffligemBlond-label.png",
-    "name": "Kptain",
-    "serving": "Serve in a Snifter",
-    "style": "Belgian-Style Blonde Ale"
+    "img": "players/img/noPic.jpg",
+    "name": "Kptain"
   }
 ]

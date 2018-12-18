@@ -3,12 +3,9 @@
     "ratio": 70,
     "team": "RCA",
     "availability": "Vice-President RCA",
-    "description": "Affligem Blonde, the classic clear blonde abbey ale, with a gentle roundness and 6.8% alcohol. Low on bitterness, it is eminently drinkable.",
+    "description": "Wow such a great guy, he's so handsome",
     "id": "Excel",
-    "img": "players/img/Excel.jpg",
-    "label": "players/img/AffligemBlond-label.png",
-    "name": "Excel",
-    "serving": "Serve in a Snifter",
-    "style": "Belgian-Style Blonde Ale"
+    "img": "players/img/noPic.jpg",
+    "name": "Excel"
   }
 ]

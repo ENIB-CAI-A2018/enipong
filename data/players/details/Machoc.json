@@ -3,12 +3,9 @@
     "ratio": 70,
     "team": "RCA",
     "availability": "Secretaire",
-    "description": "Affligem Blonde, the classic clear blonde abbey ale, with a gentle roundness and 6.8% alcohol. Low on bitterness, it is eminently drinkable.",
+    "description": "Ceci n'est pas un pokemon",
     "id": "Machoc",
-    "img": "players/img/Machoc.jpg",
-    "label": "players/img/AffligemBlond-label.png",
-    "name": "Machoc",
-    "serving": "Serve in a Snifter",
-    "style": "Belgian-Style Blonde Ale"
+    "img": "players/img/noPic.jpg",
+    "name": "Machoc"
   }
 ]

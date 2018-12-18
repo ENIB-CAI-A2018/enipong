@@ -3,12 +3,9 @@
     "ratio": 70,
     "team": "ORG",
     "availability": "Second adjoint",
-    "description": "Affligem Blonde, the classic clear blonde abbey ale, with a gentle roundness and 6.8% alcohol. Low on bitterness, it is eminently drinkable.",
+    "description": "Le gras c'est la vie !",
     "id": "So6",
     "img": "players/img/So6.jpg",
-    "label": "players/img/AffligemBlond-label.png",
-    "name": "So6",
-    "serving": "Serve in a Snifter",
-    "style": "Belgian-Style Blonde Ale"
+    "name": "So6"
   }
 ]
