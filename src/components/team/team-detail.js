@@ -102,10 +102,9 @@ export class TeamDetail extends PolymerElement {
           <li>
             <dl>
               <dt>Players</dt>
-              <a href=/player/[[team.players[0]]]><dd>[[team.players[0]]]</dd></a>
-              <a href=/player/[[team.players[1]]]><dd>[[team.players[1]]]</dd></a>
-              <a href=/player/[[team.players[2]]]><dd>[[team.players[2]]]</dd></a>
-              <a href=/player/[[team.players[3]]]><dd>[[team.players[3]]]</dd></a>
+              <template is="dom-repeat" items=[[team.players]] as="playerId">
+                <a href="/player/[[playerId]]"><dd>[[playerId]]</dd></a>
+              </template>
             </dl>
           </li>
           <li>
