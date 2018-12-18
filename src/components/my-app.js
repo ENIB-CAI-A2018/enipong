@@ -36,8 +36,8 @@ class MyApp extends LitElement {
         --app-secondary-color: #D3D3D3;
         --app-dark-text-color: var(--app-secondary-color);
         --app-light-text-color: white;
-        --app-section-even-color: #f7f7f7;
-        --app-section-odd-color: white;
+        --app-section-even-color: #D3D3D3;
+        --app-section-odd-color:#D3D3D3 ;
 
         --app-header-background-color: #293237;
         --app-header-text-color: var(--app-dark-text-color);
