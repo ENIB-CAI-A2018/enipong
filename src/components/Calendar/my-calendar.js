@@ -51,20 +51,20 @@ class MyCalendar extends PageViewElement {
             <div class="field">
               <label class="label">Nom de l'événement</label>
               <div class="control">
-                <input class="input" type="text" placeholder="Text input">
+                <input class="input" type="text" placeholder="Text input" id="name">
               </div>
             </div>
             <div class="field">
             <label class="label">Date</label>
             <div class="control">
-              <input class="input" type="text" placeholder="Text input">
+              <input class="input" type="text" placeholder="Text input" id="date">
             </div>
           </div>
 
             <div class="field">
               <label class="label">Lieu</label>
               <div class="control has-icons-left has-icons-right">
-                <input class="input is-success" type="text" placeholder="Text input">
+                <input class="input is-success" type="text" placeholder="Text input" id="lieu">
                 <span class="icon is-small is-left">
                     <i class="fas fa-user"></i>
                 </span>
@@ -91,22 +91,13 @@ class MyCalendar extends PageViewElement {
             <div class="field">
               <label class="label">Informations supplementaires</label>
               <div class="control">
-                <textarea class="textarea" placeholder="Textarea"></textarea>
-              </div>
-            </div>
-
-            <div class="field">
-              <div class="control">
-                <label class="checkbox">
-                  <input type="checkbox">
-                  I agree to the <a href="#">terms and conditions</a>
-                </label>
+                <textarea class="textarea" placeholder="Textarea" id="description"></textarea>
               </div>
             </div>
 
             <div class="field is-grouped">
               <div class="control">
-                <button class="button is-link">Submit</button>
+                <button @click="${this._postEvent}" class="button is-link" id="submit">Submit</button>
               </div>
               <div class="control">
                 <button @click="${this._appear}" class="button is-text">Cancel</button>
@@ -140,6 +131,24 @@ class MyCalendar extends PageViewElement {
     catch (err) {
       console.log('fetch failed', err);
     }
+  }
+
+  async _postEvent() {
+    var i,n,da,de,li;
+    console.log("click");
+    i=$("#id").val();
+    n=$("#name").val();
+    da=$("#date").val();
+    de=$("#description").val();
+    li==$("#lieu").val();
+
+    
+    $.post("http://localhost:3000/calendar",{id : i, name : n, date : da, description : de, lieu : li}, function(data){
+      if(data==='done')
+      {
+        alert("event created successfully");
+      }
+    });
   }
 
   constructor() {
