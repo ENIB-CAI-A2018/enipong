@@ -22,11 +22,14 @@ class MyCalendar extends PageViewElement {
               <div class="box">
                 <p class="title">Calendrier des rencontres</p>
                 <div class="columns is-multiline">
-                <dom-repeat items="[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,19,20,21,22,23,24,25,26,27,28,29,30,31]" as="event">
+                <dom-repeat items="[[event]]">
                   <template>
                     <div class="column is-narrow">
                       <div class="box">
-                        <p class="title">[[event]]</p>
+                        <event-list-item
+                          name="[[item.name]]"
+                          date="[[item.date]]">
+                        </event-list-item>
                       </div>
                     </div>
                   </template>
@@ -51,6 +54,12 @@ class MyCalendar extends PageViewElement {
                 <input class="input" type="text" placeholder="Text input">
               </div>
             </div>
+            <div class="field">
+            <label class="label">Date</label>
+            <div class="control">
+              <input class="input" type="text" placeholder="Text input">
+            </div>
+          </div>
 
             <div class="field">
               <label class="label">Lieu</label>
@@ -63,11 +72,10 @@ class MyCalendar extends PageViewElement {
                     <i class="fas fa-check"></i>
                 </span>
               </div>
-              <p class="help is-success">This username is available</p>
             </div>
 
             <div class="field">
-              <label class="label">Subject</label>
+              <label class="label">Type</label>
               <div class="control">
                 <div class="select">
                   <select name="number">
@@ -117,11 +125,28 @@ class MyCalendar extends PageViewElement {
         type: Boolean,
         value : false
       },
+      events : {
+        type : Array
+      }
 
   }}
 
+  async _getData() {
+    try {
+      const url = `http://localhost:3000/events`;
+      const response = await fetch(url);
+      this.events = await response.json();
+    }
+    catch (err) {
+      console.log('fetch failed', err);
+    }
+  }
+
   constructor() {
     super();
+    this.events = [];
+
+    this._getData();
   }
 
   _appear(){

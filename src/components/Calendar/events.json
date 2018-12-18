@@ -1,0 +1,16 @@
+[
+    {
+      "date": "19/12/2018",
+      "description": "Affligem Blonde, the classic clear blonde abbey ale, with a gentle roundness and 6.8% alcohol. Low on bitterness, it is eminently drinkable.",
+      "id": "AffligemBlond",
+      "name": "BP",
+      "lieu": "Enibar"
+    },
+    {
+      "date": "25/12/2018",
+      "description": "Chimay Triple, with its typical golden colour, its slightly hazy appearance and its fine head is especially characterised by its aroma which results from an agreeable combination of fresh hops and yeast. The beers flavour, as sensed in the mouth, comes from the smell of hops: above all it is the fruity notes of muscat and raisins that give this beer a particularly attractive aroma. The aroma complements the touch of bitterness. There is no acidity, but an after-bitterness which melts in the mouth. This top fermented Trappist beer, refermented in the bottle, is not pasteurised.",
+      "id": "ChimayTriple",
+      "name": "Le BP de noël",
+      "lieu" : "Enibar"
+    }
+  ]
