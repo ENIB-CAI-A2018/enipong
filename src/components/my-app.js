@@ -32,18 +32,18 @@ class MyApp extends LitElement {
         --app-drawer-width: 256px;
         display: block;
 
-        --app-primary-color: #E91E63;
-        --app-secondary-color: #293237;
+        --app-primary-color: #D3D3D3;
+        --app-secondary-color: #D3D3D3;
         --app-dark-text-color: var(--app-secondary-color);
         --app-light-text-color: white;
-        --app-section-even-color: #f7f7f7;
-        --app-section-odd-color: white;
+        --app-section-even-color: #D3D3D3;
+        --app-section-odd-color:#D3D3D3 ;
 
-        --app-header-background-color: white;
+        --app-header-background-color: #293237;
         --app-header-text-color: var(--app-dark-text-color);
         --app-header-selected-color: var(--app-primary-color);
 
-        --app-drawer-background-color: var(--app-secondary-color);
+        --app-drawer-background-color: #293237;
         --app-drawer-text-color: var(--app-light-text-color);
         --app-drawer-selected-color: #78909C;
       }
@@ -65,7 +65,6 @@ class MyApp extends LitElement {
 
       [main-title] {
         font-family: 'Pacifico';
-        text-transform: lowercase;
         font-size: 30px;
         /* In the narrow layout, the toolbar is offset by the width of the
         drawer button, and the text looks not centered. Add a padding to
