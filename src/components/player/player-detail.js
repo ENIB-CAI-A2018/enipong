@@ -85,8 +85,8 @@ export class PlayerDetail extends PolymerElement {
       </style>
 
       <div id="[[player.id]]" class="player clearfix">
-        <h1 class="name">[[player.name]]</h1>
-        <img class="pull-right img" src="{{mainImg}}">
+        <center><h1 class="name">[[player.name]]</h1></center>
+        <img class="pull-right img" src="{{mainImg}}" style="width:250px;height:250px;">
         <p class="description">[[player.description]]</p>
 
         

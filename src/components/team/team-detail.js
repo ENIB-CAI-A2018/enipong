@@ -87,7 +87,7 @@ export class TeamDetail extends PolymerElement {
       <div id="[[team.id]]" class="team clearfix">
         <center><h1 class="name">[[team.name]]</h1></center>
         <a href="/teams"><img class="pull-right back" src="/images/back.png"></a>
-        <img class="pull-right img" src="/data/[[team.img]]">
+        <img class="pull-right img" src="/data/[[team.img]]" style="width:250px;height:250px;">
         <p class="description">[[team.description]]</p>
         <ul class="specs">
           <li>
