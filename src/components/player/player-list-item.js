@@ -12,7 +12,7 @@ export class PlayerListItem extends PolymerElement {
       <style>
         .player {
           margin: 10px;
-          padding: 10px;
+          padding: 5px;
           border: solid 1px black;
           border-radius: 10px;
           min-height: 150px;
@@ -28,7 +28,7 @@ export class PlayerListItem extends PolymerElement {
         <img class="float-right el-img" src="/data/players[[img]]">
         <a href="player/[[id]]"><h2 class="el-name">[[name]]</h2></a>
         <p class="el-description">[[description]]</p>
-        <p class="float-right el-ratio">Win ratio: [[ratio]]%</p>
+        <h3 class="float-right el-ratio">Win ratio: [[ratio]]%</h3>
       </div>
     `;
   }
