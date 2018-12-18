@@ -20,11 +20,11 @@ export class TeamDetail extends PolymerElement {
           height: 50px;
         }
         .img {
-          float: left;
+          float: right;
           border: 1px solid black;
           margin-right: 3em;
           margin-bottom: 2em;
-          background-color: white;
+          background-color: black;
           padding: 2em;
           height: 400px;
           width: 400px;
@@ -43,7 +43,7 @@ export class TeamDetail extends PolymerElement {
           display: inline-block;
           margin: 1em;
           background-color: white;
-        }
+        }Contact
 
         ul.team-thumbs img {
           height: 100px;
@@ -79,19 +79,10 @@ export class TeamDetail extends PolymerElement {
       </style>
 
       <div id="[[team.id]]" class="team clearfix">
-        <a href="/teams"><img class="pull-right back" src="/img/back.png"></a>
-        <h1 class="name">[[team.name]]</h1>
-        <img class="pull-right img" src="{{mainImg}}">
+        <center><h1 class="name">[[team.name]]</h1></center>
+        <a href="/teams"><img class="pull-right back" src="/images/back.png"></a>
+        <img class="pull-right img" src="/data/[[team.img]]">
         <p class="description">[[team.description]]</p>
-
-        <ul class="team-thumbs">
-          <li>
-            <img src="/data/[[team.img]]" team="[[team.img]]" on-click="setImage">
-          </li>
-          <li>
-            <img src="/data/[[team.label]]" team="[[team.label]]" on-click="setImage">
-          </li>
-        </ul>
         <ul class="specs">
           <li>
             <dl>
@@ -128,15 +119,7 @@ export class TeamDetail extends PolymerElement {
       team: {
         type: Object,
       },
-      mainImg: {
-        type: String,
-        value: "",
-      },
     };
-  }
-
-  setImage(e){
-    this.mainImg = e.path[0].src;
   }
 
   async _onIdChange() {
@@ -146,7 +129,6 @@ export class TeamDetail extends PolymerElement {
     try {
       const response = await fetch(url);
       this.team = await response.json();
-      this.mainImg = "/data/"+this.team.img;
     }
     catch (err) {
       console.log('fetch failed', err);
