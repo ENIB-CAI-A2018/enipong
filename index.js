@@ -7,6 +7,8 @@ var MongoClient = require('mongodb').MongoClient;
 app.use(cors());
 
 app.use('/data/players/img', express.static('img'));
+app.use('/data/teams/img', express.static('img'));
+
 app.use(express.static('public'));
 
 var url = 'mongodb://localhost:27017/';
@@ -62,8 +64,34 @@ var findTeams = function(db, teamList,  callback) {
    });
 };
 
+var findEvent = function(db, eventId, callback) {
+   var cursor = db.collection('eventDetails').find({id: eventId} );
+   var ev;
+   cursor.each(function(err, doc) {
+      assert.equal(err, null);
+      if (doc != null) {
+        ev = doc;
+      } else {
+         callback(ev);
+      }
+   });
+};
+
+var findEvents = function(db, eventList,  callback) {
+   var cursor =db.collection('events').find( );
+   cursor.each(function(err, doc) {
+      assert.equal(err, null);
+      if (doc != null) {
+         eventList.push(doc);
+      } else {
+         callback();
+      }
+   });
+};
+
+
 app.get('/players', function (req, res) {
-  console.log('Received request for players from', req.ip)
+  // console.log('Received request for players from', req.ip)
 
   MongoClient.connect(url, function(err, client) {
     var db = client.db('database');
@@ -77,7 +105,7 @@ app.get('/players', function (req, res) {
 });
 
 app.get('/player/:playerId', function (req, res) {
-  console.log('Received request for '+req.param('playerId')+' from', req.ip)
+  // console.log('Received request for '+req.param('playerId')+' from', req.ip)
   MongoClient.connect(url, function(err, client) {
     var db = client.db('database');
     assert.equal(null, err);
@@ -90,7 +118,7 @@ app.get('/player/:playerId', function (req, res) {
 });
 
 app.get('/teams', function (req, res) {
-  console.log('Received request for teams from', req.ip)
+  // console.log('Received request for teams from', req.ip)
 
   MongoClient.connect(url, function(err, client) {
     var db = client.db('database');
@@ -104,13 +132,40 @@ app.get('/teams', function (req, res) {
 });
 
 app.get('/team/:teamId', function (req, res) {
-  console.log('Received request for '+req.param('teamId')+' from', req.ip)
+  // console.log('Received request for '+req.param('teamId')+' from', req.ip)
   MongoClient.connect(url, function(err, client) {
     var db = client.db('database');
     assert.equal(null, err);
     findTeam(db, req.param('teamId'),  function(team) {
       console.log(team)
       res.json(team);
+      client.close();
+    });
+  });
+});
+
+app.get('/events', function (req, res) {
+  // console.log('Received request for players from', req.ip)
+
+  MongoClient.connect(url, function(err, client) {
+    var db = client.db('database');
+    assert.equal(null, err);
+    var eventList = [];
+    findEvents(db, eventList, function() {
+      res.json(eventList);
+      client.close();
+    });
+  });
+});
+
+app.get('/event/:eventId', function (req, res) {
+  // console.log('Received request for '+req.param('playerId')+' from', req.ip)
+  MongoClient.connect(url, function(err, client) {
+    var db = client.db('database');
+    assert.equal(null, err);
+    findEvent(db, req.param('eventId'),  function(ev) {
+      console.log(ev)
+      res.json(ev);
       client.close();
     });
   });

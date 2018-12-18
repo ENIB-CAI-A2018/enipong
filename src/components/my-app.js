@@ -201,6 +201,7 @@ class MyApp extends LitElement {
       <teams-view class="page" ?active="${this._page === 'teams'}"></teams-view>
       <team-detail-view class="page" teamId=${this._teamId} ?active="${this._page === 'team/'+this._teamId}"></team-detail-view>
       <my-calendar class="page" ?active="${this._page === 'calendar'}"></my-calendar>
+      <event-detail-view class="page" eventId=${this._eventId} ?active="${this._page === 'event/'+this._eventId}"></event-detail-view>
     </main>
 
 
@@ -222,7 +223,8 @@ class MyApp extends LitElement {
       _snackbarOpened: { type: Boolean },
       _offline: { type: Boolean },
       _playerId : { type: String },
-      _teamId : { type: String }
+      _teamId : { type: String },
+      _eventId : { type: String }
     }
   }
 
@@ -278,11 +280,12 @@ class MyApp extends LitElement {
     var page = {};
     if (parts[0] == 'player'){
       this._playerId = parts[1];
-      console.log(this._playerId);
       page = parts[0] + '/' + parts[1];
     } else if (parts[0] == 'team'){
       this._teamId = parts[1];
-      console.log(this._teamId);
+      page = parts[0] + '/' + parts[1];
+    } else if (parts[0] == 'event'){
+      this._eventId = parts[1];
       page = parts[0] + '/' + parts[1];
     } else {
       page = parts[0] || 'players';
@@ -328,7 +331,10 @@ class MyApp extends LitElement {
         break;
       case 'calendar':
         console.log("case :",page);
-        import('../components/my-calendar.js');
+        import('../components/Calendar/my-calendar.js');
+        break;
+      case 'event/'+this._eventId:
+        import('../components/event-detail-view.js');
         break;
       default:
         page = 'view404';
