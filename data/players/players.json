@@ -1,7 +1,7 @@
 [
   {
     "ratio": 6.8,
-    "description": "",
+    "description": "Va faire la vaisselle !",
     "id": "Bender",
     "img": "/img/Bender.jpg",
     "name": "Bender"
@@ -15,42 +15,42 @@
   },
   {
     "ratio": 8.5,
-    "description": "The king of the abbey beers. It is amber-gold and pours with a deep head and original aroma, delivering a complex, full bodied flavour. Pure enjoyment! Secondary fermentation in the bottle.",
+    "description": "Futur prez' (pas du RCA en tout cas)",
     "id": "Sizheure",
     "img": "/img/Sizheure.jpg",
     "name": "Sizheure"
   },
   {
     "ratio": 7.5,
-    "description": "Trappistes Rochefort 6 Belgian Beer.",
+    "description": "Ceci n'est pas un pokemon",
     "id": "Machoc",
     "img": "/img/Machoc.jpg",
     "name": "Machoc"
   },
   {
     "ratio": 9.2,
-    "description": "A dry but rich flavoured beer with complex fruity and spicy flavours.",
+    "description": "Toujours là pour les grands evenements",
     "id": "Fakh",
     "img": "/img/Fakh.jpg",
     "name": "Fakh"
   },
   {
     "ratio": 11.3,
-    "description": "The top product from the Rochefort Trappist brewery. Dark colour, full and very impressive taste. Strong plum, raisin, and black currant palate, with ascending notes of vinousness and other complexities.",
+    "description": "Simplement 2 ...",
     "id": "B0nzini",
     "img": "/img/B0nzini.jpg",
     "name": "B0nzini"
   },
   {
     "ratio": 6.7,
-    "description": "This name became a reference. This beer is mostly pointed out with its product name: a Paterke. This Paterke is a dark, chestnut coloured beer with a high fermentation (6.7%) and a full taste",
+    "description": "Le gras c'est la vie !",
     "id": "So6",
     "img": "/img/So6.jpg",
     "name": "So6"
   },
   {
     "ratio": 8.0,
-    "description": "This beer, with high fermentation, has a pale amber colour and a flowery, fruity taste with a harmonious balance between sweet and sour. This beer has a thick and vivid froth and strikes its balanced taste with a delicate bitterness.",
+    "description": "Couscous",
     "id": "Kptain",
     "img": "/img/Kptain.jpg",
     "name": "Kptain"

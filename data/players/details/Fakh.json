@@ -3,12 +3,9 @@
     "ratio": 70,
     "team": "ORG",
     "availability": "Maire",
-    "description": "Affligem Blonde, the classic clear blonde abbey ale, with a gentle roundness and 6.8% alcohol. Low on bitterness, it is eminently drinkable.",
+    "description": "Toujours là pour les grands evenements",
     "id": "Fakh",
-    "img": "players/img/Fakh.jpg",
-    "label": "players/img/AffligemBlond-label.png",
-    "name": "Fakh",
-    "serving": "Serve in a Snifter",
-    "style": "Belgian-Style Blonde Ale"
+    "img": "players/img/noPic.jpg",
+    "name": "Fakh"
   }
 ]
