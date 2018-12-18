@@ -75,6 +75,12 @@ export class TeamDetail extends PolymerElement {
 
         h1 {
           border-bottom: 1px solid gray;
+          font-family: 'Pacifico';
+          color: #0056B3;
+        }
+        h3{
+          color:red;
+          font-size:1.5em;
         }
       </style>
 
@@ -87,7 +93,7 @@ export class TeamDetail extends PolymerElement {
           <li>
             <dl>
               <dt>Win ratio</dt>
-              <dd>[[team.ratio]]%</dd>
+              <h3>[[team.ratio]]%</h3>
             </dl>
           </li>
           <li>

@@ -75,28 +75,26 @@ export class PlayerDetail extends PolymerElement {
 
         h1 {
           border-bottom: 1px solid gray;
+          font-family: 'Pacifico';
+          color: #0056B3;
+        }
+        h3{
+          color:red;
+          font-size:1.5em;
         }
       </style>
 
       <div id="[[player.id]]" class="player clearfix">
-        <a href="/players"><img class="pull-right back" src="/img/back.png"></a>
         <h1 class="name">[[player.name]]</h1>
         <img class="pull-right img" src="{{mainImg}}">
         <p class="description">[[player.description]]</p>
 
-        <ul class="player-thumbs">
-          <li>
-            <img src="/data/[[player.img]]" player="[[player.img]]" on-click="setImage">
-          </li>
-          <li>
-            <img src="/data/[[player.label]]" player="[[player.label]]" on-click="setImage">
-          </li>
-        </ul>
+        
         <ul class="specs">
           <li>
             <dl>
               <dt>Win ratio</dt>
-              <dd>[[player.ratio]]%</dd>
+              <h3>[[player.ratio]]%</h3>
             </dl>
           </li>
           <li>
