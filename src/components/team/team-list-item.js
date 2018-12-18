@@ -23,12 +23,20 @@ export class TeamListItem extends PolymerElement {
         .el-ratio {
           clear:both;
         }
+        h3{
+          color:red;
+          font-size:1.5em;
+        }
+        a{
+          font-family: 'Pacifico';
+          text-transform: uppercase;
+        }
       </style>
       <div id="[[id]]" class="team clearfix">
         <img class="float-right el-img" src="/data/teams/[[img]]">
         <a href="/team/[[id]]"><h2 class="el-name">[[name]]</h2></a>
         <p class="el-description">[[description]]</p>
-        <p class="float-right el-ratio">Win ratio: [[ratio]]%</p>
+        <h3 class="float-right el-ratio">Win ratio: [[ratio]]%</h3>
       </div>
     `;
   }

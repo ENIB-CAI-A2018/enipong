@@ -23,6 +23,13 @@ export class PlayerListItem extends PolymerElement {
         .el-ratio {
           clear:both;
         }
+        h3{
+          color:red;
+          font-size:1.2 em;
+        }
+        a{
+          font-family: 'Pacifico';
+        }
       </style>
       <div id="[[id]]" class="player clearfix">
         <img class="float-right el-img" src="/data/players[[img]]">
