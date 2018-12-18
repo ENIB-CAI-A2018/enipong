@@ -1,13 +1,13 @@
 [
   {
-    "ratio": 90,
+    "ratio": 65,
     "description": "Il fait bon vivre à Rebond-s/-Godet.",
     "id": "ORG",
     "img": "/img/ORG.jpg",
     "name": "ORG"
   },
   {
-    "ratio": 80,
+    "ratio": 35,
     "description": "RCA>ORG",
     "id": "RCA",
     "img": "/img/RCA.jpg",

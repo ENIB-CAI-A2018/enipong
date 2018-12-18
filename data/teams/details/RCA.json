@@ -1,12 +1,12 @@
 [
   {
-    "ratio": 80,
+    "ratio": 35,
     "players": ["Bender","Excel","Machoc","Sizheure"],
     "availability": "",
     "description": "RCA>ORG",
     "id": "RCA",
     "img": "teams/img/RCA.jpg",
     "label": "teams/img/RCA-label.png",
-    "name": "Racing Club d'Airball",
+    "name": "Racing Club d'Airball"
   }
 ]

@@ -1,58 +1,58 @@
 [
   {
-    "ratio": 6.8,
+    "ratio": 80,
     "description": "Va faire la vaisselle !",
     "id": "Bender",
-    "img": "/img/Bender.jpg",
+    "img": "/img/noPic.jpg",
     "name": "Bender"
   },
   {
-    "ratio": 6.8,
+    "ratio": 60,
     "description": "Wow such a great guy, he's so handsome",
     "id": "Excel",
-    "img": "/img/Excel.jpg",
+    "img": "/img/noPic.jpg",
     "name": "Excel"
   },
   {
-    "ratio": 8.5,
+    "ratio": 55,
     "description": "Futur prez' (pas du RCA en tout cas)",
     "id": "Sizheure",
-    "img": "/img/Sizheure.jpg",
+    "img": "/img/noPic.jpg",
     "name": "Sizheure"
   },
   {
-    "ratio": 7.5,
+    "ratio": 30,
     "description": "Ceci n'est pas un pokemon",
     "id": "Machoc",
-    "img": "/img/Machoc.jpg",
+    "img": "/img/noPic.jpg",
     "name": "Machoc"
   },
   {
-    "ratio": 9.2,
+    "ratio": 85,
     "description": "Toujours là pour les grands evenements",
     "id": "Fakh",
-    "img": "/img/Fakh.jpg",
+    "img": "/img/noPic.jpg",
     "name": "Fakh"
   },
   {
-    "ratio": 11.3,
+    "ratio": 73.5,
     "description": "Simplement 2 ...",
     "id": "B0nzini",
-    "img": "/img/B0nzini.jpg",
+    "img": "/img/noPic.jpg",
     "name": "B0nzini"
   },
   {
-    "ratio": 6.7,
+    "ratio": 86.6922,
     "description": "Le gras c'est la vie !",
     "id": "So6",
-    "img": "/img/So6.jpg",
+    "img": "/img/noPic.jpg",
     "name": "So6"
   },
   {
-    "ratio": 8.0,
-    "description": "Couscous",
+    "ratio": 68,
+    "description": "Ohé ohé ... abandonnée",
     "id": "Kptain",
-    "img": "/img/Kptain.jpg",
+    "img": "/img/noPic.jpg",
     "name": "Kptain"
   }
 ]

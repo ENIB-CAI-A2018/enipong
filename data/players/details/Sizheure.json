@@ -1,11 +1,11 @@
 [
   {
-    "ratio": 70,
+    "ratio": 55,
     "team": "RCA",
     "availability": "Trésorier",
     "description": "Futur prez' (pas du RCA en tout cas)",
     "id": "Sizheure",
-    "img": "players/img/Sizheure.jpg",
+    "img": "players/img/noPic.jpg",
     "name": "Sizheure"
   }
 ]
