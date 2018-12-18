@@ -25,7 +25,7 @@ export class PlayerListItem extends PolymerElement {
         }
       </style>
       <div id="[[id]]" class="player clearfix">
-        <img class="float-right el-img" src="/data/players/[[img]]">
+        <img class="float-right el-img" src="/data/players[[img]]">
         <a href="player/[[id]]"><h2 class="el-name">[[name]]</h2></a>
         <p class="el-description">[[description]]</p>
         <p class="float-right el-ratio">Win ratio: [[ratio]]%</p>
