@@ -1,7 +1,7 @@
 [
   {
     "ratio": 80,
-    "players": "RCA",
+    "players": ["Bender","Excell","Machoc","Sizheure"],
     "availability": "",
     "description": "RCA>ORG",
     "id": "RCA",
